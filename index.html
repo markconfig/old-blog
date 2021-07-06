@@ -39,7 +39,7 @@
             <div class="container d-flex align-items-center flex-column">
 
                 <!-- Masthead Avatar Image-->
-                <img style="border-radius: 40%;" class="masthead-avatar mb-5" src="assets/img/mark.jpg" alt="" />
+                <img style="border-radius: 50%;" class="masthead-avatar mb-5" src="assets/img/mark.jpg" alt="" />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Mi portafolio</h1>
                 <!-- Icon Divider-->
@@ -49,14 +49,14 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Programador Junior</p>
+                <p class="masthead-subheading font-weight-light mb-0">Desarrollador</p>
             </div>
         </header>
-        <!-- Portfolio Section-->
+        <!-- Portafolio Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portafolio</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -178,8 +178,37 @@
                     <div class="divider-custom-line"></div>
                 </div>
 
+                <style type="text/css">
+                    .flex-content{
+                        display: flex;
+                        flex-flow: wrap;
+                        justify-content: center;
 
+                    }
+                    .flex-content > div{
+                        background-color: white;
+                        padding: 5px;
+                        margin: 20px;
+                        line-height: 75px;
+                        text-align: center;
+                    }
+                </style>
+                <div class="flex-content">
+                    <div>
+                        <h2>Número Teléfonico</h2>
+                        <div>
+                            <p>9531266126</p>
+                        </div> 
+                    </div>
+                    <div>
+                        <h2>Correo Electrónico</h2>
+                        <div>
+                            <p>marcos.mrc.77@gmail.com</p>
+                        </div> 
+                    </div>
 
+                </div>
+                <div><h1 style="text-align: center; margin-bottom: 50px;">ó Enviame un Whatsapp</h1></div>
                 <!-- Contact Section Form-->
         
 
@@ -187,14 +216,30 @@
                     <div class="col-lg-8 mx-auto">
               
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                       <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                            <div class="control-group">
+                        
+
+                       <form id="frm" name="sentMessage" novalidate="novalidate">
+                            
+
+
+        <!--                    <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Nombre</label>
                                     <input class="form-control" id="name" type="text" placeholder="Nombre" required="required" data-validation-required-message="Please enter your name." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+        -->                    
+                            
+        
+                            <div class="control-group success">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2 floating-label-form-group-with-value">
+                                    <label>Número Teléfonico</label>
+                                    <input class="form-control" id="phone" type="tel" placeholder="" required="required" data-validation-required-message="Please enter your phone number." readonly="true" value="+529531266126" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Correo Electrónico</label>
@@ -202,13 +247,11 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Número Teléfonico</label>
-                                    <input class="form-control" id="phone" type="tel" placeholder="Número Teléfonico" required="required" data-validation-required-message="Please enter your phone number." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
+
+
+
+
+
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Mensaje</label>
@@ -222,11 +265,26 @@
                         </form>
                     </div>
                 </div>
-
-
-
             </div>
-            
+            <script type="text/javascript">
+                
+
+                const frm = document.querySelector("#frm");
+
+                frm.addEventListener("submit", event => {
+                    event.preventDefault();
+                    const frm = event.target;
+                    const formData = {
+                        phone: frm.phone.value,
+                        email: frm.email.value,
+                        data: frm.message.value
+                    };
+                    const dataMessage = formData.data.replace(" ","%20");
+                    const URL = `https://api.whatsapp.com/send?phone=${formData.phone}&text=${dataMessage}%20.%20Mi%20E-mail%20es:%20${formData.email}`;
+
+                      window.open(URL, "_blank");
+                });
+            </script>
         </section>
 
         <!-- Footer-->
