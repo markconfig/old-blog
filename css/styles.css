@@ -2677,6 +2677,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
+  /* color: #1abc9c;
+  border-color: #1abc9c; */
   color: #1abc9c;
   border-color: #1abc9c;
 }
@@ -6073,7 +6075,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #1abc9c !important;
+  background-color: #8e0303 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -10111,11 +10113,11 @@ h3 {
   }
 }
 .masthead {
-  padding-top: calc(6rem + 74px);
-  padding-bottom: 6rem;
+  padding-top: calc(4rem + 15px);
+  padding-bottom: calc(3rem + 15px);
 }
 .masthead .masthead-heading {
-  font-size: 2.75rem;
+  font-size: 2rem;
   line-height: 2.75rem;
 }
 .masthead .masthead-subheading {
@@ -10127,8 +10129,8 @@ h3 {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
-    padding-bottom: 6rem;
+    padding-top: calc(1rem + 50px);
+    padding-bottom: 3rem;
   }
   .masthead .masthead-heading {
     font-size: 4rem;
@@ -10229,8 +10231,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: #2c3e50;
   color: #fff;
 }
